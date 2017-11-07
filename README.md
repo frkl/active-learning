@@ -1,4 +1,4 @@
-#Active learning for deep learning.
+# Active learning for deep learning.
 
 Torch implementation of entropy, curiosity-driven (expected model change) and goal-driven (expected error redunction) active learning strategies derived under the Bayesian neural network framework. See our [paper](https://arxiv.org/abs/1711.01732) for details. We benchmarked these active learning strategies using the pool-based active learning setting. All active learning strategies are effective in reducing the number of queries on MNIST digit classification and Visual Question Answering (VQA) tasks. 
 
