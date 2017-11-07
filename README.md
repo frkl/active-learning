@@ -4,7 +4,7 @@ Torch implementation of entropy, curiosity-driven (expected model change) and go
 
 ### Goal-driven learning
 
-We want to put special emphasis to goal-driven learning on VQA because it is a new result in both theory and application. Goal-driven learning by definition, tries to get labels on training examples that are informative for answering the test questions. It is especially useful for open-ended question answering, where there are always clickbait questions whose answers are inspiring but useless for our target task. Goal-driven learning involves mutual information computation which is extremely computationally expensive and people used to think it's impractical. We found an approximation that is fast and works reasonably well. And we experimentally show that on the VQA dataset.
+We want to put special emphasis to goal-driven learning on VQA because it is a new result for both theory and application. Goal-driven learning by definition, tries to get labels on training examples that are informative for answering the test questions. It is especially useful for open-ended question answering, where there are always clickbait questions whose answers are inspiring but useless for our target task. Goal-driven learning involves mutual information computation which is extremely computationally expensive and people used to think it's impractical. We found an approximation that is fast and works reasonably well. And we experimentally show that on the VQA dataset.
 
 
 ### MNIST 3-layer MLP (784-1200-1200-10)
