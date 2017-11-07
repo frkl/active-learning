@@ -17,7 +17,7 @@ We want to put special emphasis to goal-driven learning on VQA because it is a n
 
 - 50k init + 50k examples: 50.3 (active) vs 49.3 (random)
 - 50k init + 90k examples: 52.1 (active) vs 51.2 (random)
-- 51-crossing: 50k init + [ 68k examples (active) vs 88k examples (random) ]
+- 51.0-crossing: 50k init + [ 68k examples (active) vs 88k examples (random) ]
 
 See our [paper](https://arxiv.org/abs/1711.01732) for curiosity- and goal-driven learning results. 
 
