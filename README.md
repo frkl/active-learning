@@ -13,7 +13,7 @@ We want to put special emphasis to goal-driven learning on VQA because it is a n
 - 2000 examples: 97.38 (active) vs 94.40 (random)
 - 94.40-crossing: 680 examples (active) vs 1930 examples (random)
 
-### VQAv1.0 LSTM+CNN ([link](https://github.com/GT-Vision-Lab/VQA_LSTM_CNN))
+### VQA v1.0 LSTM+CNN ([link](https://github.com/GT-Vision-Lab/VQA_LSTM_CNN))
 
 - 50k init + 50k examples: 50.3 (active) vs 49.3 (random)
 - 50k init + 90k examples: 52.1 (active) vs 51.2 (random)
