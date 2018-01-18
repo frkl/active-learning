@@ -1,6 +1,6 @@
 # Active Learning for VQA
 
-Written in lua t7
+Written in lua torch
 
 ## Dataset
 
