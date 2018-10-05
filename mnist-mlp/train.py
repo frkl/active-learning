@@ -202,19 +202,19 @@ for iter_al in range(0,params.rounds):
 		#Compute average test vector
 		avg_fim_test=[];
 		for i in range(0,data_test.size(),params.batch):
-			r=min(data_test.size(),params.batch);
-			fim=score_test[i:r,:,:]-torch.logmeanexp(score_test[i:r,:,:],dim=1,keepdim=True);
+			r=min(data_test.size(),i+params.batch);
+			fim=score_test[i:r,:,:]-util.math.logmeanexp(score_test[i:r,:,:],dim=1,keepdim=True);
 			fim=torch.bmm(torch.exp(fim),torch.exp(score_test[i:r,:,:].clone().permute(0,2,1)))/params.bnn;
 			avg_fim_test.append(fim.sum(0,keepdim=True)/data_test.size());
 		avg_fim_test=torch.cat(avg_fim_test,dim=0);
-		avg_fim_test=avg_fim_test.mean(0);
+		avg_fim_test=avg_fim_test.sum(0);
 		#Compute best train-test matching
 		train_test_mi=torch.Tensor(data_train.size()).cuda();
 		for i in range(0,data_train.size(),params.batch):
-			r=min(data_train.size(),params.batch);
-			fim=score_train[i:r,:,:]-torch.logmeanexp(score_train[i:r,:,:],dim=1,keepdim=True);
+			r=min(data_train.size(),i+params.batch);
+			fim=score_train[i:r,:,:]-util.math.logmeanexp(score_train[i:r,:,:],dim=1,keepdim=True);
 			fim=torch.bmm(torch.exp(fim),torch.exp(score_train[i:r,:,:].clone().permute(0,2,1)))/params.bnn;
-			train_test_mi[i:r]=(torch.mm(fim.view(r-i,-1),avg_fim_test.view(-1,1))-1)/2
+			train_test_mi[i:r]=(torch.mm(fim.view(r-i,-1),avg_fim_test.view(-1,1)).view(-1)-1)/2
 		
 		top_mi,ind=train_test_mi.sort(0,True);
 		nsel=min(data_train.size()-len(subset),params.inc);
